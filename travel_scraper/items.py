@@ -8,20 +8,28 @@
 import scrapy
 
 
-class TravelScraperItem(scrapy.Item):
+class TravelScraperHotelItem(scrapy.Item):
     static = scrapy.Field()
     review = scrapy.Field()
     price = scrapy.Field()
 
 
-class TravelScrapperStatic(scrapy.Item):
+class TravelScrapperStaticItem(scrapy.Item):
+    asset_name = scrapy.Field()
+    address = scrapy.Field()
+    asset_class = scrapy.Field()
+    website = scrapy.Field()
+    rooms_num = scrapy.Field()
+    also_known = scrapy.Field()
+    location = scrapy.Field()
+    agoda_url = scrapy.Field()
+
+class TravelScrapperReviewItem(scrapy.Item):
     pass
 
 
-class TravelScrapperReview(scrapy.Item):
-    pass
-
-
-class TravelScrapperPrice(scrapy.Item):
-    pass
-
+class TravelScrapperPriceItem(scrapy.Item):
+    hotel_url = scrapy.Field()
+    best_price = scrapy.Field()
+    provider = scrapy.Field()
+    provider_url = scrapy.Field()
