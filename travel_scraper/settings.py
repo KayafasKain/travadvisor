@@ -9,6 +9,9 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
+import logging
+from scrapy.utils.log import configure_logging
+
 BOT_NAME = 'travel_scraper'
 
 SPIDER_MODULES = ['travel_scraper.spiders']
@@ -19,13 +22,21 @@ NEWSPIDER_MODULE = 'travel_scraper.spiders'
 #USER_AGENT = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:65.0) Gecko/20100101 Firefox/65.0'
 
 # Obey robots.txt rules
-DOWNLOAD_DELAY = 1
+DOWNLOAD_DELAY = 0.5
 DOWNLOAD_TIMEOUT = 2
 ROBOTSTXT_OBEY = False
 COOKIES_ENABLED = True
 AJAXCRAWL_ENABLED = True
 ETRY_ENABLED = False
-COOKIES_DEBUG = True
+COOKIES_DEBUG = False
+
+
+configure_logging(install_root_handler=False)
+logging.basicConfig(
+    filename='log.txt',
+    format='%(levelname)s: %(message)s',
+    level=logging.INFO
+)
 #USER_AGENT = "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.93 Safari/537.36"
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32

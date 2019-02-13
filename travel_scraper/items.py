@@ -8,7 +8,7 @@
 import scrapy
 
 
-class TravelScraperHotelItem(scrapy.Item):
+class TravelScraperhotelItem(scrapy.Item):
     static = scrapy.Field()
     review = scrapy.Field()
     price = scrapy.Field()
@@ -22,6 +22,7 @@ class TravelScrapperStaticItem(scrapy.Item):
     rooms_num = scrapy.Field()
     also_known = scrapy.Field()
     location = scrapy.Field()
+    asset_url = scrapy.Field()
     agoda_url = scrapy.Field()
 
 class TravelScrapperReviewItem(scrapy.Item):
